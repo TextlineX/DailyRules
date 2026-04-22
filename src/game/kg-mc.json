@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "aki-game.net",
+        "aki-game.com",
+        "kurogame.com",
+        "ap-hok-1.com"
+      ],
+      "ip_cidr": [
+        "43.166.248.0/24",
+        "43.130.79.0/24",
+        "43.166.0.0/16"
+      ],
+      "network": "udp"
+    }
+  ]
+}
