@@ -1,30 +1,56 @@
-# Daily-Direct Sing-box Rules (Release Based)
+# DailyRules - 日常规则集
 
-这是一个基于 **GitHub Release** 的日常规则集仓库。支持从 JSON 自动编译为二进制（SRS）并作为发布附件（Assets）托管。
+规则分为三类：**proxy**（代理）、**direct**（直连）、**block**（广告拦截）。
 
-## 如何在 Sing-box 中引用
+## 规则分类
 
-由于我们使用 Release 进行托管，引用链接将始终指向最新版本的二进制文件：
+| 文件 | 类型 | 说明 |
+|------|------|------|
+| `google.json` / `.srs` | proxy | Google 全家桶 |
+| `youtube.json` / `.srs` | proxy | YouTube |
+| `telegram.json` / `.srs` | proxy | Telegram |
+| `github.json` / `.srs` | proxy | GitHub |
+| `netflix.json` / `.srs` | proxy | Netflix |
+| `disney.json` / `.srs` | proxy | Disney+ |
+| `steam.json` / `.srs` | proxy | Steam |
+| `category-ai-!cn.json` / `.srs` | proxy | AI 服务（非中国） |
+| `geolocation-!cn.json` / `.srs` | proxy | 非中国地区 |
+| `cn.json` / `.srs` | direct | 中国域名 |
+| `bilibili.json` / `.srs` | direct | 哔哩哔哩 |
+| `category-ads-all.json` / `.srs` | block | 广告拦截 |
+| `dreista-ads.json` / `.srs` | block | Dreista 广告规则 |
+
+## 引用方式
+
+### SRS（二进制，推荐）
 
 ```json
 {
-  "tag": "Daily-Direct",
+  "tag": "google",
   "type": "remote",
   "format": "binary",
-  "url": "https://github.com/<OWNER>/<REPO>/releases/latest/download/Daily-Direct.srs",
-  "download_detour": "🚀 自动选择"
+  "url": "https://github.com/TextlineX/DailyRules/releases/download/nightly/google.srs"
 }
 ```
 
-将 `<OWNER>/<REPO>` 替换为你的仓库地址（如果你是在 fork 仓库里使用，这一步是必须的）。
+### JSON（源码，可直接编辑）
 
-## 如何触发发布一个新的 Release
+```json
+{
+  "tag": "google",
+  "type": "remote",
+  "format": "source",
+  "url": "https://raw.githubusercontent.com/TextlineX/DailyRules/main/src/google.json"
+}
+```
 
-当你修改了 `src/` 下的内容后，通过以下 Git 指令发布新版本：
+## 发布方式
 
-1.  `git add .`
-2.  `git commit -m "feat: update daily rules"`
-3.  `git tag v1.0.1` (版本号根据你的情况递增)
-4.  `git push origin main --tags`
+推送 `v*` 标签创建正式 Release，直接 push 到 main 分支创建 nightly 构建。
 
-推送 **Tag** 后，GitHub 会自动创建一个包含编译好的 `.srs` 文件的 Release。
+```bash
+git add .
+git commit -m "feat: update rules"
+git tag v1.0.0
+git push origin main --tags
+```
