@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "meta.com",
+        "oculus.com",
+        "metaforr.com"
+      ],
+      "domain_suffix": [
+        "meta.com",
+        "oculus.com",
+        "oculusvr.com",
+        "facebook.com",
+        "fb.com",
+        "instagram.com",
+        "whatsapp.com",
+        "messenger.com",
+        "threads.net"
+      ]
+    }
+  ]
+}
