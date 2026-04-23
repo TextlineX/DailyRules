@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "vrchat.com",
+        "vrchatapi.com",
+        "photon.multiplayer.unity3d.com",
+        "photon-ssl.unity3d.com",
+        "photon.unity3d.com"
+      ],
+      "domain_suffix": [
+        "vrchat.com",
+        "vrchat.cloud",
+        "vrcdns.net",
+        "unity3d.com",
+        "unity.cn"
+      ]
+    }
+  ]
+}

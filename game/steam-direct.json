@@ -1,13 +1,22 @@
 {
   "version": 1,
   "rules": [
-    {"domain":[
-      "steamcdn-a.akamaihd.net",
-      "cm.steampowered.com"
+    {
+      "domain": [
+        "steamcdn-a.akamaihd.net",
+        "cm.steampowered.com",
+        "csgo.wmsj.cn",
+        "dota2.wmsj.cn",
+        "wmsjsteam.com",
+        "client-update.queniuqe.com",
+        "dl.steam.clngaa.com"
       ],
       "domain_suffix": [
         "steamserver.net",
-        "steamcontent.com"
+        "steamcontent.com",
+        "st.dl.bscstorage.net",
+        "st.dl.eccdnx.com",
+        "st.dl.pinyuncloud.com"
       ]
     }
   ]
